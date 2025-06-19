@@ -1,0 +1,23 @@
+{
+  "name": "react-ejs-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Helios360/CICD_webapp.git"
+  },
+  "author": "Hellios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Helios360/CICD_webapp/issues"
+  },
+  "homepage": "https://github.com/Helios360/CICD_webapp#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2"
+  }
+}
