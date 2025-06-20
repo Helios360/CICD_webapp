@@ -29,7 +29,7 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
-          cd ~/cicd_webapp
+          cd ~/cicd_webapp/react-ejs-app
           npm install
           npm run build || echo "no build script (ignored)"
           pm2 restart app || pm2 start index.js --name app
