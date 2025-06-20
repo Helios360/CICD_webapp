@@ -20,7 +20,7 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         source: "./*"
-        target: "/var/www/cicd_webapp"
+        target: "~/cicd_webapp"
 
     - name: Install dependencies and restart app via SSH
       uses: appleboy/ssh-action@v0.1.5
@@ -29,7 +29,7 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
-          cd /var/www/cicd_webapp
+          cd ~/cicd_webapp
           npm install
           npm run build || echo "no build script (ignored)"
           pm2 restart app || pm2 start index.js --name app
