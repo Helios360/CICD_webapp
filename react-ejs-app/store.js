@@ -34,7 +34,14 @@ const updateById = async (id, message) => {
 
 const deleteById = async (id) => {
   const data = await readData();
-  await saveChanges(data.filter((current) => current.id !== id));
+  const index = data.findIndex((item) => item.id === id);
+
+  if (index === -1) return undefined;
+
+  const [deletedItem] = data.splice(index, 1);
+  await saveChanges(data);
+  return deletedItem;
 };
+
 
 export { getAll, getById, create, updateById, deleteById };
